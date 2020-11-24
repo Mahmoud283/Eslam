@@ -1,7 +1,8 @@
-$main_color:#2eca7f;
+$main_color:#0046c0;
 $second_color:#09c;
 $white_color:#fff;
-$hover:rgba(0,0,0,.5);
+$black_color:#000;
+$hover:rgba(0,0,255,.5);
 $main_font:20px;
 $small_font:12px;
 $larg_paddingx:30px;
@@ -12,30 +13,23 @@ $larg_marginx:20px;
 $larg_marginy:20px;
 $small_marginx:5px;
 $small_marginy:10px;
+$border_radius: 5px;
+body{
+    font-family: "Bungee Inline", cursive;
+
+}
 .matger_img
 {
     position: relative;
     cursor: pointer;
     overflow: hidden;
-}
-.matger_img:hover .hide
-{
-    opacity: 1;
-}
-.hide{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color:$hover;
-    color:$white_color;
-    opacity: 0;
-    transition: all .4s;
-
-}
-.matger_img a
-{
+    box-shadow: 0px 0px 10px 2px #00f;
+    img
+    {
+        border-radius: $border_radius;
+    }
+    a
+    {
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -44,20 +38,108 @@ $small_marginy:10px;
     justify-content: center;
     color: $white_color;
    
+    }
+     .trans0 {
+        @extend .trans;
+        top: 0%;
+        left: -100%;
+      }
+      
+      
+      .trans1 {
+        @extend .trans;
+        left: 0%;
+        top: -100%;
+        
+      }
+      
+       .trans2 {
+        top: -100%;
+        left: -100%;
+        @extend .trans;
+      }
+       .trans3 {
+    
+        top: -100%;
+        left: 100%;
+        @extend .trans;
+      }
+     .trans4 {
+        left: 0%;
+        top: 100%;
+        @extend .trans;
+      }
+    .trans5 {
+        left: 100%;
+        top: 0%;
+        @extend .trans;
+      }
+
+    &:hover
+    {
+        .trans0,.trans1,.trans2,.trans3,.trans4,.trans5 {
+            left: 0;
+            top: 0;
+          }
+        
+    }
+}
+.trans{
+    width: 100%;
+    height: 100%;
+    border-radius: $border_radius;
+    color: $white_color;
+    background-color: $hover;
+    position: absolute;
+    transition: 1s all;
 }
 
 //pro1
-.price
+.pro-cont
 {
-    background-color: $main_color;
-    color: $white_color;
-    padding: 10px;
-    text-align: center;
+    box-shadow: 0px 0px 10px 0px $black_color;
+    transition: all 1s;
+    border-radius: $border_radius;
+   .pro-img
+   {
+    overflow: hidden;
+
+   }
+    img
+    {
+        transition: all 0.8s;
+
+    }
+    .text
+    {
+        box-shadow:inset 0 0 0 0 $main_color;
+        color: $black_color;
+        padding: $small_paddingx;
+        text-align: center;
+        transition: 1s all;
+    }
+&:hover
+{
+    transform: translateY(-10px);
+    .text{
+        box-shadow:inset 0 0 150px 10px  $main_color;
+        color: $white_color !important;
+
+        }
+        a
+        {
+            color: $white_color;
+        }
+        img{
+            transform: scale(1.2);
+            filter:brightness(.2);
+        }
+}
 }
  a
 {
-    text-decoration: none;
-    color: $white_color;
+    text-decoration: none !important;
+    color: $black_color;
 }
 
 
